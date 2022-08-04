@@ -1,22 +1,33 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  for(let i = 0; i < array.length; i++) {
+    for(let j = i + 1; j < array.length; j++) {
+      if(array[i] + array[j] === target) {
+        return true;
+      }
+    }
+  }
+  return false
 }
 
 /* 
-  Write the Big O time complexity of your function here
+  Quadratic time
 */
 
 /* 
-  Add your pseudocode here
+  for currentInt index = 0; is less than array length; and increments;
+    for comparedInt = currentInt + 1; is less than array length; and ++;
+      if currentInt + comparedInt = target
+        returns true
 */
 
 /*
-  Add written explanation of your solution here
+  Compare each number against the others to see if the sum of those two 
+  numbers equals the target number
 */
 
 // You can run `node index.js` to view these console logs
 if (require.main === module) {
-  // add your own custom tests in here
+
   console.log("Expecting: true");
   console.log("=>", hasTargetSum([3, 8, 12, 4, 11, 7], 10));
 
